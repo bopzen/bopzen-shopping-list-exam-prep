@@ -26,7 +26,6 @@ jobs:
     - name: Display Softuni Username
       run: echo "bopzen"
 
-jobs:
   Run_UI_tests:
     needs: Build_and_Unit_Test
     runs-on: ubuntu-latest
