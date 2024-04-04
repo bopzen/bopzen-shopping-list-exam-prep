@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  Build and Unit Test:
+  Build_and_Unit_Test:
 
     runs-on: ubuntu-latest
 
@@ -26,8 +26,8 @@ jobs:
     - name: Display Softuni Username
       run: echo "bopzen"
 
-  Run UI Tests:
-    needs: Build and Unit Test
+  Run_UI_Tests:
+    needs: Build_and_Unit_Test
     runs-on: ubuntu-latest
 
     steps:
@@ -47,8 +47,8 @@ jobs:
     - name: Run the UI Tests
       run: npm run test:ui
 
-  Deploy to Production:
-    needs: Run UI Tests
+  Deploy_to_Production:
+    needs: Run_UI_Tests
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to production
