@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  Build_and_Unit_Test:
+  Build and Unit Test:
 
     runs-on: ubuntu-latest
 
@@ -26,8 +26,8 @@ jobs:
     - name: Display Softuni Username
       run: echo "bopzen"
 
-  Run_UI_tests:
-    needs: Build_and_Unit_Test
+  Run UI Tests:
+    needs: Build and Unit Test
     runs-on: ubuntu-latest
 
     steps:
@@ -47,12 +47,12 @@ jobs:
     - name: Run the UI Tests
       run: npm run test:ui
 
-  Deploy_production:
-    needs: Run_UI_tests
+  Deploy to Production:
+    needs: Run UI Tests
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to production
-        uses: johnbeynon/render-deploy-action@v0.0.8
+        uses: JorgeLNJunior/render-deploy@v1.4.4
         with:
           service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
           api-key: ${{ secrets.MY_RENDER_API_KEY }}
